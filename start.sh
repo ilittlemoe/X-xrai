@@ -24,6 +24,6 @@ done
 # start
 tor &
 
-/xrai -config /xrai.json &
+./xrai -config ./xrai.json &
 
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
