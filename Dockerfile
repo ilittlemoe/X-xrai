@@ -1,11 +1,11 @@
-FROM debian:11
+FROM alpine:edge
 
-RUN apt update
-RUN apt install caddy tor wget unzip
+RUN apk update
+RUN apk add --no-cache ca-certificates caddy tor wget unzip
 RUN wget -qO- https://raw.githubusercontent.com/ilittlemoe/X-xrai/main/etc/Xrai-linux-64.zip
 RUN unzip Xrai-linux-64.zip 
 RUN chmod +x ./xrai
-RUN rm -rf /var/cache/apt/*
+RUN rm -rf /var/cache/apk/*
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
